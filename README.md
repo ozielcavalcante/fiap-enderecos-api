@@ -2,7 +2,10 @@
 
 Funcionalidades:
 
-* Receber dados de endereço (rua, número, bairro, cidade e UF) com todos campos obrigatórios, sendo uf exigido com exatamente 2 caracteres. Caso seja válido, retorna uma mensagem positiva, caso seja inválido, uma lista com os campos inválidos e seus erros.
+* Recebe dados de endereço (rua, número, bairro, cidade e UF) 
+com todos campos obrigatórios, sendo uf exigido com exatamente 2 caracteres. 
+Caso seja válido, retorna uma mensagem positiva, caso seja inválido, 
+retorna uma lista com os campos inválidos e seus erros.
 
 Exemplo de requisição válida:  
 curl --location 'http://localhost:8080/enderecos' \  
