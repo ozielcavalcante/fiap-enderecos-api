@@ -1,5 +1,6 @@
 package monitorenergia.enderecosapi.controllers;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import monitorenergia.enderecosapi.domain.Endereco;
 import monitorenergia.enderecosapi.dtos.EnderecoDTO;
@@ -19,13 +20,25 @@ public class EnderecoController {
 
     @PostMapping
     public String novo(@RequestBody @Validated EnderecoDTO enderecoDTO) {
-        enderecoRepository.save(enderecoDTO.toEntity());
-        return "endereço OK";
+        enderecoRepository.save(enderecoDTO.toEntity(null));
+        return "Endereço Salvo";
     }
 
     @GetMapping
     public List<Endereco> get(@RequestBody EnderecoDTO enderecoDTO) {
-        Example<Endereco> example = Example.of(enderecoDTO.toEntity());
+        Example<Endereco> example = Example.of(enderecoDTO.toEntity(null));
         return enderecoRepository.findAll(example);
+    }
+
+    @PutMapping("/{id}")
+    public String atualizar(@PathVariable Integer id, @RequestBody @Validated EnderecoDTO enderecoDTO) {
+        enderecoRepository.save(enderecoDTO.toEntity(id));
+        return "Endereço Atualizado";
+    }
+
+    @DeleteMapping("/{id}")
+    public String atualizar(@PathVariable Integer id) {
+        enderecoRepository.deleteById(id);
+        return "Endereço Removido";
     }
 }
