@@ -1,6 +1,7 @@
 package monitorenergia.enderecosapi.dtos;
 
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import monitorenergia.enderecosapi.domain.Endereco;
 
 public record EnderecoDTO(
