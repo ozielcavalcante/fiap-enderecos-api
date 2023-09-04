@@ -1,6 +1,5 @@
 package monitorenergia.enderecosapi.controllers;
 
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import monitorenergia.enderecosapi.domain.Endereco;
 import monitorenergia.enderecosapi.dtos.EnderecoDTO;

@@ -1,10 +1,10 @@
 package monitorenergia.enderecosapi.dtos;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import monitorenergia.enderecosapi.domain.Endereco;
 
 public record EnderecoDTO(
+        @NotNull Integer usuario,
         @NotBlank String rua,
         @NotBlank String numero,
         @NotBlank String bairro,
@@ -14,6 +14,7 @@ public record EnderecoDTO(
     public Endereco toEntity(Integer id) {
         return new Endereco(
                 id,
+                usuario,
                 rua,
                 numero,
                 bairro,
